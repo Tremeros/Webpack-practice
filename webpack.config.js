@@ -1,11 +1,16 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: { index: path.resolve(__dirname, "source", "index.js") },
     output: {
         path: path.resolve(__dirname, "docs")
+      },
+      optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
       },
       module: {
         rules: [
