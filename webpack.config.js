@@ -6,7 +6,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
     entry: { index: path.resolve(__dirname, "source", "index.js") },
     output: {
-        path: path.resolve(__dirname, "docs")
+        path: path.resolve(__dirname, "build")
       },
       optimization: {
         minimize: true,
